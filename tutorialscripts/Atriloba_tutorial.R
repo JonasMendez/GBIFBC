@@ -65,6 +65,9 @@ samplepoints<-SpatialPoints(coords, proj4string = crs(bioclimd))
 #plot presence points
 plot(samplepoints, add=T)
 
+#Extract bioclim data based on lon/lat values from GBIF dataframe
+biovals<-raster_extract(GBIFilt, bioclimd)
+
 #make longitude groups
 lonlabel<-add_geo_labels(biovals,group_column = 'decimalLongitude',
                          interval = 6.5,
