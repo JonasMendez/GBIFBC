@@ -105,9 +105,9 @@ calculate_extent <- function(data,
 
 #Function to extract bioclim data from GBIF lon/lat data
 raster_extract<- function(gbifdist, bioclimd) {
-  spoints<-sp::SpatialPoints(spdist[,c('decimalLongitude', 'decimalLatitude')], proj4string = crs(bioclimd))
+  spoints<-sp::SpatialPoints(gbifdist[,c('decimalLongitude', 'decimalLatitude')], proj4string = crs(bioclimd))
   wclimvals <- raster::extract(bioclimd, spoints)
-  spvals <- data.frame(cbind(spdist, wclimvals))
+  spvals <- data.frame(cbind(gbifdist, wclimvals))
   #filtvals<-dplyr::filter(spvals, !is.na(bio1), !is.na(bio2), !is.na(bio3), !is.na(bio4), !is.na(bio5), !is.na(bio6), !is.na(bio7), !is.na(bio8), !is.na(bio9), !is.na(bio10), !is.na(bio11), !is.na(bio12), !is.na(bio13), !is.na(bio14), !is.na(bio15), !is.na(bio16), !is.na(bio17), !is.na(bio18), !is.na(bio19), !is.na(alt))
   return(spvals)
 }
