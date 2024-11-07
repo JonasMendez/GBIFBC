@@ -7,7 +7,8 @@ library(raster)
 library(sp)
 library(ggplot2)
 #Make sure to run the functions provided in the GBIFWC.R prior to using this. 
-#This script is based on the A. triloba tutorial that can be found at:
+#This script is based on the A. triloba tutorial that can be found at: 
+#https://www.endemicbio.info/post/gbifbc-toolkit-tutorial-tracing-the-bioclimatic-and-genetic-distributions-of-pawpaw-asimina-trilob
 #Modify GBIF credentials
 usethis::edit_r_environ()
 #Set working directory for Worldclim/GBIF downloads
